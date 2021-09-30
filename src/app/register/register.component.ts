@@ -43,7 +43,8 @@ export class RegisterComponent implements OnInit {
           console.log(user);
           
           this.message = " \t" + user.code + "\t" + user.message
-          alert(user.message)
+          alert(user.user.message)
+          console.log(user.user.message)
         }
       },
       (err) => {
