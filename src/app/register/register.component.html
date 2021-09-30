@@ -5,43 +5,45 @@
 <div class="body">
             
                 <mat-form-field appearance="fill">
-                    <mat-label>First Name</mat-label>
-                    <input matInput>
+                    <mat-label>First Name</mat-label >
+                    <input matInput [(ngModel)]="FirstName" required >
+                </mat-form-field> <br>
+                
+                <mat-form-field appearance="fill">
+                    <mat-label>Last Name</mat-label >
+                    <input matInput [(ngModel)]="LastName " required>
                 </mat-form-field> <br>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Last Name</mat-label>
-                    <input matInput>
+                    <mat-label>Type</mat-label >
+                    <input matInput [(ngModel)]="Type" required>
                 </mat-form-field> <br>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Type</mat-label>
-                    <input matInput>
-                </mat-form-field> <br>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Email</mat-label>
-                    <input matInput>
+                    <mat-label>Email</mat-label >
+                    <input matInput [(ngModel)]="Email" required>
                 </mat-form-field>
                 <br>
 
                 <mat-form-field appearance="fill">
                     <mat-label>Password</mat-label>
-                    <input matInput type="password">
+                    <input matInput type="password" [(ngModel)]="Password" required>
                 </mat-form-field> <br>
 
                 <mat-form-field appearance="fill">
                     <mat-label> Conform Password</mat-label>
-                    <input matInput type="password">
+                    <input matInput type="password" [(ngModel)]="conPassword" required>
                 </mat-form-field> <br>
-
+                <p *ngIf="Password != conPassword">password and Con Password shoud match!</p>
                 <mat-form-field appearance="fill">
                     <mat-label>Phone No</mat-label>
-                    <input matInput type="number">
+                    <input matInput type="number" [(ngModel)]="Phone" >
                 </mat-form-field>
                 <br>
-
-                <button mat-raised-button color='primary'>Register</button> &nbsp;&nbsp;
+                <div class="alert alert-danger" role="alert" *ngIf="message">
+                    <strong> {{message}} </strong> 
+                 </div>
+                <button mat-raised-button color='primary' (click)="register()">Register</button> &nbsp;&nbsp;
                 <button mat-raised-button color='primary'><a style="color: aliceblue;" routerLink="/login" routerLinkActive="active">Sign In</a></button>
                 
  </div>
